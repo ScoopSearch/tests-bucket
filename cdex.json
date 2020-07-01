@@ -3,7 +3,6 @@
     "homepage": "https://cdex.mu/",
     "license": "GPL",
     "version": "2.23",
-    "depends": "vcredist2017",
     "url": "http://mirror.cdex.mu/CDex-2.23.exe#/dl.7z",
     "hash": "3bec6630a3d429061b8fe59156334bbafcf30d2619d793ea2ad286792a84f91a",
     "bin": "CDex.exe",
