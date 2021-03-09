@@ -1,0 +1,21 @@
+name: Scoop CheckVer
+
+on:
+  schedule:
+  - cron: "0 2 * * *"
+
+  workflow_dispatch:
+
+jobs:
+  checkver:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Check versions
+        run: |
+          Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+          $checkver = "$env:SCOOP_HOME/bin/checkver.ps1"
+          $bucketdir = "$env:GITHUB_WORKSPACE"
+          Invoke-Expression -command "& '$checkver' -Dir '$bucketdir'"
