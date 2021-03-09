@@ -16,6 +16,7 @@ jobs:
       - name: Check versions
         run: |
           Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
-          $checkver = "$env:SCOOP_HOME/bin/checkver.ps1"
+          $scoop_home = resolve-path (split-path (split-path (scoop which scoop)))
+          $checkver = "$scoop_home/bin/checkver.ps1"
           $bucketdir = "$env:GITHUB_WORKSPACE"
           Invoke-Expression -command "& '$checkver' -Dir '$bucketdir'"
