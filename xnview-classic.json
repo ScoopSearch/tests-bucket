@@ -1,10 +1,10 @@
 {
     "homepage": "https://www.xnview.com/en/xnview/",
-    "version": "2.50.2",
+    "version": "2.50.3",
     "license": "freeware",
     "extract_dir": "XnView",
     "url": "https://download.xnview.com/XnView-win.zip",
-    "hash": "f890583cd61b6d55a74a2bd75a710d466809fcd31442d213201cb35a253fe029",
+    "hash": "2B0C0F68A069EAF6E74D57676037708DFABFF8D49E2A0EE8095E39BCC006D1E5",
     "bin": "xnview.exe",
     "shortcuts": [
         [
