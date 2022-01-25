@@ -1,4 +1,5 @@
 
+{
     "version": "3.0.1",
     "description": "OpenHashTab is a shell extension for conveniently calculating and checking file hashes from file properties.",
     "homepage": "https://github.com/namazso/OpenHashTab",
