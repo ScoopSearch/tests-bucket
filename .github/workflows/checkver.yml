@@ -15,10 +15,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Check versions
         run: |
-          Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+          Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh') -RunAsAdmin
           $scoop_home = resolve-path (split-path (split-path (scoop which scoop)))
           $checkver = "$scoop_home/bin/checkver.ps1"
           $bucketdir = "$env:GITHUB_WORKSPACE"
-          $output = Invoke-Expression "& '$checkver' -Dir '$bucketdir' -SkipUpdated -RunAsAdmin *>&1"
+          $output = Invoke-Expression "& '$checkver' -Dir '$bucketdir' -SkipUpdated *>&1"
           Write-Host $output
           if (${output} -ne $null) { exit 1 }
